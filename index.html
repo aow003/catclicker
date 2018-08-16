@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="clicker.css" type="text/css">
+</head>
+
+<body>
+
+    <h1>
+        CLICK THE IMAGE
+    </h1>
+    <h2>
+        image has been clicked
+        <span id="count">0</span> times
+    </h2>
+
+    <img id="cat" src="https://vetstreet.brightspotcdn.com/dims4/default/a1a90c7/2147483647/thumbnail/180x180/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F0d%2Ff2e4c0b3a611e092fe0050568d634f%2Ffile%2Fhub-cats-senior.jpg">
+
+    <script>
+        var click = 0;
+        if (localStorage.getItem("click")) {
+            click = localStorage.getItem("click")
+            document.getElementById("count").innerHTML = click
+        }
+
+        document.getElementById("cat").addEventListener("click", function () {
+
+            click++
+            document.getElementById("count").innerHTML = click
+            localStorage.setItem("click", click )
+
+        })
+
+
+    </script>
+</body>
+
+</html>
